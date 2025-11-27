@@ -2,12 +2,15 @@
   {
     "name": "Nyaa.si",
     "id": "nyaasi",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "Anime torrent search provider for Nyaa.si",
     "type": "torrent",
     "accuracy": "medium",
     "media": "both",
-    "languages": ["US", "JP"],
+    "languages": [
+      "US",
+      "JP"
+    ],
     "icon": "https://nyaa.si/static/favicon.png",
     "update": "gh:zhenchai00/hys-extension",
     "code": "gh:zhenchai00/hys-extension/src/nyaasi",
@@ -16,15 +19,106 @@
   {
     "name": "Sukebei Nyaa",
     "id": "sukebei-nyaa",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "Anime torrent search provider for Sukebei Nyaa",
     "type": "torrent",
     "accuracy": "medium",
     "media": "both",
-    "languages": ["US", "JP"],
+    "languages": [
+      "US",
+      "JP"
+    ],
     "icon": "https://sukebei.nyaa.si/static/favicon.png",
     "update": "gh:zhenchai00/hys-extension",
     "code": "gh:zhenchai00/hys-extension/src/sukebei-nyaa",
     "options": {}
+  },
+  {
+    "name": "Seadex",
+    "id": "seadex",
+    "version": "0.0.1",
+    "description": "Anime torrent search provider for Seadex",
+    "type": "torrent",
+    "accuracy": "high",
+    "media": "sub",
+    "languages": [
+      "US"
+    ],
+    "icon": "https://releases.moe/favicon.png",
+    "update": "gh:zhenchai00/hys-extension",
+    "code": "gh:zhenchai00/hys-extension/src/seadex",
+    "options": {}
+  },
+  {
+    "name": "AnimeTosho",
+    "id": "animetosho",
+    "version": "0.0.1",
+    "description": "Anime torrent search provider for AnimeTosho",
+    "type": "torrent",
+    "accuracy": "high",
+    "media": "sub",
+    "languages": [
+      "US"
+    ],
+    "icon": "https://animetosho.org/inc/favicon.ico",
+    "update": "gh:zhenchai00/hys-extension",
+    "code": "gh:zhenchai00/hys-extension/src/animetosho/animetosho",
+    "options": {}
+  },
+  {
+    "name": "AnimeTosho MultiSub",
+    "id": "animetosho-multi",
+    "version": "0.0.1",
+    "description": "Anime torrent search provider for AnimeTosho with multi-sub support",
+    "type": "torrent",
+    "accuracy": "high",
+    "media": "both",
+    "languages": ["ALL"],
+    "icon": "https://animetosho.org/inc/favicon.ico",
+    "update": "gh:zhenchai00/hys-extension",
+    "code": "gh:zhenchai00/hys-extension/src/animetosho/animetosho-multi",
+    "options": {}
+  },
+  {
+    "name": "AnimeTosho",
+    "id": "animetosho-nzb",
+    "version": "0.0.1",
+    "description": "Anime NZB search provider for AnimeTosho",
+    "type": "nzb",
+    "accuracy": "high",
+    "media": "sub",
+    "languages": [
+      "US"
+    ],
+    "icon": "https://animetosho.org/inc/favicon.ico",
+    "update": "gh:zhenchai00/hys-extension",
+    "code": "gh:zhenchai00/hys-extension/src/animetosho/animetosho-nzb",
+    "options": {
+      "domain": {
+        "type": "string",
+        "description": "Provider Domain",
+        "default": "news.example.com"
+      },
+      "port": {
+        "type": "number",
+        "description": "Provider Port",
+        "default": 119
+      },
+      "username": {
+        "type": "string",
+        "description": "Provider Username",
+        "default": "mail@example.com"
+      },
+      "password": {
+        "type": "string",
+        "description": "Provider Password, this is stored unencrypted on your drive",
+        "default": "password"
+      },
+      "poolSize": {
+        "type": "number",
+        "description": "Connection Pool Size",
+        "default": 5
+      }
+    }
   }
 ]
