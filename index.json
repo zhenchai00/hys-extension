@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Nyaa.si",
+    "id": "nyaasi",
+    "version": "1.0.0",
+    "description": "Anime torrent search provider for Nyaa.si",
+    "type": "torrent",
+    "accuracy": "medium",
+    "media": "both",
+    "languages": ["All"],
+    "icon": "https://nyaa.si/static/favicon.png",
+    "update": "gh:zhenchai00/hayase-extensions",
+    "code": "gh:zhenchai00/hayase-extensions/src/nyaasi",
+    "options": {}
+  },
+  {
+    "name": "Sukebei Nyaa",
+    "id": "sukebei-nyaa",
+    "version": "1.0.0",
+    "description": "Anime torrent search provider for Sukebei Nyaa",
+    "type": "torrent",
+    "accuracy": "medium",
+    "media": "both",
+    "languages": ["All"],
+    "icon": "https://sukebei.nyaa.si/static/favicon.png",
+    "update": "gh:zhenchai00/hayase-extensions",
+    "code": "gh:zhenchai00/hayase-extensions/src/sukebei-nyaa",
+    "options": {}
+  }
+]
