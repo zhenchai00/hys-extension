@@ -9,8 +9,8 @@
     "media": "both",
     "languages": ["All"],
     "icon": "https://nyaa.si/static/favicon.png",
-    "update": "gh:zhenchai00/hayase-extensions",
-    "code": "gh:zhenchai00/hayase-extensions/src/nyaasi",
+    "update": "gh:zhenchai00/hys-extension",
+    "code": "gh:zhenchai00/hys-extension/src/nyaasi",
     "options": {}
   },
   {
@@ -23,8 +23,8 @@
     "media": "both",
     "languages": ["All"],
     "icon": "https://sukebei.nyaa.si/static/favicon.png",
-    "update": "gh:zhenchai00/hayase-extensions",
-    "code": "gh:zhenchai00/hayase-extensions/src/sukebei-nyaa",
+    "update": "gh:zhenchai00/hys-extension",
+    "code": "gh:zhenchai00/hys-extension/src/sukebei-nyaa",
     "options": {}
   }
 ]
