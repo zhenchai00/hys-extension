@@ -59,8 +59,8 @@
       "US"
     ],
     "icon": "https://animetosho.org/inc/favicon.ico",
-    "update": "",
-    "code": "http://localhost:3500/extensions/animetosho",
+    "update": "gh:zhenchai00/hys-extensions",
+    "code": "gh:zhenchai00/hys-extensions/src/extensions/animetosho",
     "options": {}
   },
   {
@@ -75,8 +75,8 @@
       "ALL"
     ],
     "icon": "https://animetosho.org/inc/favicon.ico",
-    "update": "",
-    "code": "http://localhost:3500/extensions/animetosho-multi",
+    "update": "gh:zhenchai00/hys-extensions",
+    "code": "gh:zhenchai00/hys-extensions/src/extensions/animetosho-multi",
     "options": {}
   },
   {
@@ -91,8 +91,8 @@
       "US"
     ],
     "icon": "https://animetosho.org/inc/favicon.ico",
-    "update": "",
-    "code": "http://localhost:3500/extensions/animetosho/animetosho-nzb",
+    "update": "gh:zhenchai00/hys-extensions",
+    "code": "gh:zhenchai00/hys-extensions/src/extensions/animetosho/animetosho-nzb",
     "options": {
       "domain": {
         "type": "string",
