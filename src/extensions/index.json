@@ -7,7 +7,9 @@
     "type": "torrent",
     "accuracy": "medium",
     "media": "both",
-    "languages": ["ALL"],
+    "languages": [
+      "ALL"
+    ],
     "icon": "https://nyaa.si/static/favicon.png",
     "update": "",
     "code": "http://localhost:3500/extensions/nyaasi",
@@ -21,7 +23,9 @@
     "type": "torrent",
     "accuracy": "medium",
     "media": "both",
-    "languages": ["ALL"],
+    "languages": [
+      "ALL"
+    ],
     "icon": "https://sukebei.nyaa.si/static/favicon.png",
     "update": "",
     "code": "http://localhost:3500/extensions/sukebei-nyaa",
@@ -67,7 +71,9 @@
     "type": "torrent",
     "accuracy": "high",
     "media": "both",
-    "languages": ["ALL"],
+    "languages": [
+      "ALL"
+    ],
     "icon": "https://animetosho.org/inc/favicon.ico",
     "update": "",
     "code": "http://localhost:3500/extensions/animetosho-multi",
