@@ -3,11 +3,12 @@
   "version": "0.0.1",
   "description": "Extensions and proxy for Hayase",
   "main": "server.js",
-  "types": "module",
+  "type": "module",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
+    "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "express-rate-limit": "^8.2.1",
     "helmet": "^8.1.0"

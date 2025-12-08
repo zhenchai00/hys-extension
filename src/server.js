@@ -8,9 +8,20 @@
 import express from 'express'
 import rateLimit from 'express-rate-limit'
 import helmet from 'helmet'
+import dotenv from 'dotenv'
+import fs from 'fs/promises'
+import path from 'path'
+
+dotenv.config()
 
 const app = express()
 app.use(helmet())
+
+// Very brief request logger
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url} from ${req.ip}`)
+  next()
+})
 
 // Allow CORS for everything (for development). In production consider locking down origins.
 app.use((req, res, next) => {
@@ -28,6 +39,25 @@ const limiter = rateLimit({
   legacyHeaders: false
 })
 app.use(limiter)
+
+// Print the current working directory at startup
+console.log('cwd:', process.cwd())
+const EXT_DIR = path.join(process.cwd(), 'src/extensions')
+console.log('extensions dir (expected):', EXT_DIR)
+
+// Route to list files in the extensions directory for debugging
+app.get('/extensions/list', async (req, res) => {
+  try {
+    const files = await fs.readdir(EXT_DIR)
+    const stats = await Promise.all(files.map(async f => {
+      const st = await fs.stat(path.join(EXT_DIR, f))
+      return { name: f, isFile: st.isFile(), size: st.size }
+    }))
+    res.json({ ok: true, path: EXT_DIR, files: stats })
+  } catch (err) {
+    res.status(500).json({ ok: false, error: err.message })
+  }
+})
 
 // Allowlist of upstream hostnames
 const ALLOWLIST = new Set([
@@ -116,9 +146,10 @@ app.get('/proxy', async (req, res) => {
 })
 
 // Serve static extension files
-app.use('/extensions', express.static('extensions', {
+app.use('/extensions', express.static(EXT_DIR, {
   setHeaders: (res) => {
     // ensure served extension files are CORS-allowed
+    console.log('Serving extensions from ./extensions')
     res.setHeader('Access-Control-Allow-Origin', '*')
   }
 }))
