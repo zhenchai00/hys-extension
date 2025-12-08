@@ -16,7 +16,8 @@ export default new class SukebeiNyaa extends AbstractSource {
     try {
       const response = await fetch(this.url)
       return response.ok
-    } catch {
+    } catch (error) {
+      console.error('Sukebei Nyaa test failed', error)
       return false
     }
   }

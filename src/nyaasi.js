@@ -16,8 +16,8 @@ export default new class NyaaSi extends AbstractSource {
     try {
       const res = await fetch(this.url, { method: 'GET' })
       return res.ok
-    } catch {
-      console.error('Nyaa.si test failed')
+    } catch (error) {
+      console.error('Nyaa.si test failed', error)
       return false
     }
   }
