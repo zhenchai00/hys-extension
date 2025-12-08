@@ -1,4 +1,4 @@
-import AbstractSource from '../abstract';
+import AbstractSource from './abstract';
 
 export default new (class SeaDex extends AbstractSource {
   url = atob(

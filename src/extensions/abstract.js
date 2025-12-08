@@ -1,5 +1,5 @@
 /**
- * @typedef {import('./types').TorrentSource} TorrentSource
+ * @typedef {import('../types').TorrentSource} TorrentSource
  */
 
 /**
@@ -8,7 +8,7 @@
 export default class AbstractSource {
   /**
    * Gets results for single episode
-   * @type {import('./types').SearchFunction}
+   * @type {import('../types').SearchFunction}
    */
   single (options) {
     throw new Error('Source doesn\'t implement single')
@@ -16,7 +16,7 @@ export default class AbstractSource {
 
   /**
    * Gets results for batch of episodes
-   * @type {import('./types').SearchFunction}
+   * @type {import('../types').SearchFunction}
    */
   batch (options) {
     throw new Error('Source doesn\'t implement batch')
@@ -24,7 +24,7 @@ export default class AbstractSource {
 
   /**
    * Gets results for a movie
-   * @type {import('./types').SearchFunction}
+   * @type {import('../types').SearchFunction}
    */
   movie (options) {
     throw new Error('Source doesn\'t implement movie')

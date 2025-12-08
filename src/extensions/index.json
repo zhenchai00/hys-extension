@@ -9,8 +9,8 @@
     "media": "both",
     "languages": ["ALL"],
     "icon": "https://nyaa.si/static/favicon.png",
-    "update": "gh:zhenchai00/hys-extension",
-    "code": "gh:zhenchai00/hys-extension/src/nyaasi",
+    "update": "",
+    "code": "http://localhost:3500/extensions/nyaasi",
     "options": {}
   },
   {
@@ -23,8 +23,8 @@
     "media": "both",
     "languages": ["ALL"],
     "icon": "https://sukebei.nyaa.si/static/favicon.png",
-    "update": "gh:zhenchai00/hys-extension",
-    "code": "gh:zhenchai00/hys-extension/src/sukebei-nyaa",
+    "update": "",
+    "code": "http://localhost:3500/extensions/sukebei-nyaa",
     "options": {}
   },
   {
@@ -39,8 +39,8 @@
       "US"
     ],
     "icon": "https://releases.moe/favicon.png",
-    "update": "gh:zhenchai00/hys-extension",
-    "code": "gh:zhenchai00/hys-extension/src/seadex",
+    "update": "",
+    "code": "http://localhost:3500/extensions/seadex",
     "options": {}
   },
   {
@@ -55,8 +55,8 @@
       "US"
     ],
     "icon": "https://animetosho.org/inc/favicon.ico",
-    "update": "gh:zhenchai00/hys-extension",
-    "code": "gh:zhenchai00/hys-extension/src/animetosho/animetosho",
+    "update": "",
+    "code": "http://localhost:3500/extensions/animetosho",
     "options": {}
   },
   {
@@ -69,8 +69,8 @@
     "media": "both",
     "languages": ["ALL"],
     "icon": "https://animetosho.org/inc/favicon.ico",
-    "update": "gh:zhenchai00/hys-extension",
-    "code": "gh:zhenchai00/hys-extension/src/animetosho/animetosho-multi",
+    "update": "",
+    "code": "http://localhost:3500/extensions/animetosho-multi",
     "options": {}
   },
   {
@@ -85,8 +85,8 @@
       "US"
     ],
     "icon": "https://animetosho.org/inc/favicon.ico",
-    "update": "gh:zhenchai00/hys-extension",
-    "code": "gh:zhenchai00/hys-extension/src/animetosho/animetosho-nzb",
+    "update": "",
+    "code": "http://localhost:3500/extensions/animetosho/animetosho-nzb",
     "options": {
       "domain": {
         "type": "string",

@@ -1,4 +1,4 @@
-import AbstractSource from '../../abstract.js'
+import AbstractSource from '../../../abstract.js'
 
 const QUALITIES = ['1080', '720', '540', '480']
 
@@ -6,18 +6,19 @@ export default new class Tosho extends AbstractSource {
   url = atob('aHR0cHM6Ly9mZWVkLmFuaW1ldG9zaG8ub3JnL2pzb24=')
 
   buildQuery ({ resolution, exclusions }) {
-    if (!exclusions?.length && !resolution) return ''
-    const base = `&qx=1&q=!("${exclusions.join('"|"')}")`
-    if (!resolution) return base
+    const base = `&qx=1&q=(multi*|multisub*)`
+    if (!exclusions?.length && !resolution) return base
+    const excl = `!("${exclusions.join('"|"')}")`
+    if (!resolution) return base + excl
 
-    const excl = QUALITIES.filter(q => q !== resolution)
-    return base + `!(*${excl.join('*|*')}*)`
+    const qual = QUALITIES.filter(q => q !== resolution)
+    return base + excl + `!(*${qual.join('*|*')}*)`
   }
 
   /**
-   * @param {import('./types').Tosho[]} entries
+   * @param {import('../types').Tosho[]} entries
    * @param {boolean} batch
-   * @returns {import('./').TorrentResult[]}
+   * @returns {import('../').TorrentResult[]}
    **/
   map (entries, batch = false) {
     return entries.map(entry => {
@@ -36,38 +37,38 @@ export default new class Tosho extends AbstractSource {
     })
   }
 
-  /** @type {import('./').SearchFunction} */
+  /** @type {import('../').SearchFunction} */
   async single ({ anidbEid, resolution, exclusions }) {
     if (!anidbEid) throw new Error('No anidbEid provided')
     const query = this.buildQuery({ resolution, exclusions })
     const res = await fetch(this.url + '?eid=' + anidbEid + query)
 
-    /** @type {import('./types').Tosho[]} */
+    /** @type {import('../types').Tosho[]} */
     const data = await res.json()
 
     if (data.length) return this.map(data)
     return []
   }
 
-  /** @type {import('./').SearchFunction} */
+  /** @type {import('../').SearchFunction} */
   async batch ({ anidbAid, resolution, exclusions }) {
     if (!anidbAid) throw new Error('No anidbAid provided')
     const query = this.buildQuery({ resolution, exclusions })
     const res = await fetch(this.url + '?order=size-d&aid=' + anidbAid + query)
 
-    const data = /** @type {import('./types').Tosho[]} */(await res.json()).filter(entry => entry.num_files > 1)
+    const data = /** @type {import('../types').Tosho[]} */(await res.json()).filter(entry => entry.num_files > 1)
 
     if (data.length) return this.map(data, true)
     return []
   }
 
-  /** @type {import('./').SearchFunction} */
+  /** @type {import('../').SearchFunction} */
   async movie ({ anidbAid, resolution, exclusions }) {
     if (!anidbAid) throw new Error('No anidbAid provided')
     const query = this.buildQuery({ resolution, exclusions })
     const res = await fetch(this.url + '?aid=' + anidbAid + query)
 
-    /** @type {import('./types').Tosho[]} */
+    /** @type {import('../types').Tosho[]} */
     const data = await res.json()
 
     if (data.length) return this.map(data)
@@ -79,7 +80,7 @@ export default new class Tosho extends AbstractSource {
       const res = await fetch(this.url);
       return res.ok;
     } catch (error) {
-      console.error('AnimeTosho test failed:', error);
+      console.error('AnimeTosho Multi test failed:', error);
       return false;
     }
   }

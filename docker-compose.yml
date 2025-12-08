@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  hayase-proxy:
+    build: .
+    ports:
+      - "3500:3500"
+    environment:
+      - PORT=3500
+      - CACHE_TTL=60000
+      - CACHE_MAX_ENTRIES=1000
+    restart: unless-stopped

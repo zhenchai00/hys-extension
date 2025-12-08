@@ -1,4 +1,4 @@
-import AbstractSource from '../abstract.js'
+import AbstractSource from '../../abstract.js'
 
 const QUALITIES = ['2160', '1080', '720', '540', '480']
 
@@ -71,7 +71,7 @@ export default new class NyaaSi extends AbstractSource {
   /**
    * Parse search results from HTML
    * @param {string} html - HTML content
-   * @returns {import('../types/index.js').TorrentResult[]}
+   * @returns {import('../../types/index.js').TorrentResult[]}
    */
   parseResults(html) {
     const results = []
@@ -183,7 +183,7 @@ export default new class NyaaSi extends AbstractSource {
    * Perform search on Nyaa.si
    * @param {string} query - Search query
    * @param {string} category - Category filter
-   * @returns {Promise<import('../types/index.js').TorrentResult[]>}
+   * @returns {Promise<import('../../types/index.js').TorrentResult[]>}
    */
   async performSearch(query, category = '1_2') { // 1_2 = Anime - English-translated
     const url = `${this.url}/?f=0&c=${category}&q=${query}&s=seeders&o=desc`
@@ -200,7 +200,7 @@ export default new class NyaaSi extends AbstractSource {
     }
   }
 
-  /** @type {import('../types/index.js').SearchFunction} */
+  /** @type {import('../../types/index.js').SearchFunction} */
   async single({ titles, episode, resolution, exclusions }) {
     if (!titles?.length) throw new Error('No titles provided')
     
@@ -225,7 +225,7 @@ export default new class NyaaSi extends AbstractSource {
     return results.slice(0, 20) // Limit results
   }
 
-  /** @type {import('../types/index.js').SearchFunction} */
+  /** @type {import('../../types/index.js').SearchFunction} */
   async batch({ titles, episodeCount, resolution, exclusions }) {
     if (!titles?.length) throw new Error('No titles provided')
     
@@ -247,7 +247,7 @@ export default new class NyaaSi extends AbstractSource {
     }))
   }
 
-  /** @type {import('../types/index.js').SearchFunction} */
+  /** @type {import('../../types/index.js').SearchFunction} */
   async movie({ titles, resolution, exclusions }) {
     if (!titles?.length) throw new Error('No titles provided')
     
